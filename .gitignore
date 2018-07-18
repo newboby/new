@@ -6,7 +6,6 @@
 *.classpath
 *.project
 *.settings
-service-proxy
 data*
 *.log*
 
