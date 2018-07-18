@@ -1,0 +1,12 @@
+.idea
+.*.swp
+.DS_*
+*.iml
+*.sh
+*.classpath
+*.project
+*.settings
+service-proxy
+data*
+*.log*
+
