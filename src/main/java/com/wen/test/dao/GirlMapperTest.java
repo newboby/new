@@ -1,4 +1,4 @@
-package com.wen.test;
+package com.wen.test.dao;
 
 import com.wen.dao.GirlMapper;
 import org.apache.ibatis.javassist.ClassPath;

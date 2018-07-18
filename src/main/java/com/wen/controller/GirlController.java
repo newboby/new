@@ -7,8 +7,7 @@ import de.neuland.jade4j.Jade4J;
 import de.neuland.jade4j.exceptions.JadeCompilerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
@@ -22,14 +21,15 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/user")
-public class GirlControll {
+public class GirlController {
     @Autowired
     GirlService girlService;
 
-    @RequestMapping("/id")
-    public ModelAndView writeSubmitHtml() {
-        Girl girl = girlService.selectAllGirl(1);
-        ModelAndView m=new ModelAndView("pages/index");
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    public ModelAndView writeSubmitHtml(@PathVariable int id) {
+        Girl girl = girlService.selectAllGirl(id);
+        ModelAndView m=new ModelAndView("pages/templates/index");
+        System.out.println("success");
         m.addObject("girls",girl);
 //        ModelAndView mv = new ModelAndView("pages/templates/index");
 //        mv.addObject("a", "a");
