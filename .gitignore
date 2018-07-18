@@ -8,4 +8,5 @@
 *.settings
 data*
 *.log*
+target
 
