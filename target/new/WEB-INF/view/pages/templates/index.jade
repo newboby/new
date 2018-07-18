@@ -1,0 +1,10 @@
+html
+  head
+    title= pageName
+  body
+    include ../templates/header.jade
+    ol#girls
+        for  girl in girls
+
+          li #{girl.age} €
+    include ../templates/footer.jade
