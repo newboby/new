@@ -6,6 +6,8 @@ import com.wen.service.GirlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/7/17.
  */
@@ -18,6 +20,11 @@ public class GirlServiceImpl implements GirlService {
     @Override
     public Girl selectAllGirl(Integer id) {
         return girlMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Girl> selectAll() {
+        return girlMapper.selectAll();
     }
 
 }

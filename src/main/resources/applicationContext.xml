@@ -9,8 +9,9 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:properties/*.properties</value>
+                <value>classpath:properties/jdbc.properties</value>
                 <!--要是有多个配置文件，只需在这里继续添加即可 -->
+                <value>classpath:properties/log4j.properties</value>
             </list>
         </property>
     </bean>
@@ -24,7 +25,7 @@
 
     <!-- 配置SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <!--打印sql -->
+        <!--&lt;!&ndash;打印sql &ndash;&gt;-->
         <!--<property name="configLocation" value="classpath:mybatis-config.xml"/>-->
         <!-- 加载数据源 -->
         <property name="dataSource" ref="dataSource"></property>

@@ -1,2 +1,9 @@
-${girls.age},${girls.id}
+<ol>
+<%
+for(girl in girls!){
+%>
+<li>${girl.age},${girl.id},------${girl.cupSize!"无结果"}-----${girl.money}<br><li>
+<%}
+%>
 
+</ol>

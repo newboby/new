@@ -7,40 +7,27 @@
 
     <!-- 开启扫描 -->
     <context:component-scan base-package="com.wen.controller"></context:component-scan>
-
-    <!--静态资源-->
-    <!--<mvc:resources mapping="/img" location="WEB-INF/html"/>-->
     <!-- 开启注解驱动 -->
     <mvc:annotation-driven/>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:properties/beetl.properties</value>
+                <!--要是有多个配置文件，只需在这里继续添加即可 -->
+
+            </list>
+        </property>
+    </bean>
 
     <!-- 上传配置 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="10240000"></property>
     </bean>
-    <!-- 视图 -->
-    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<property name="prefix" value="/"></property>-->
-        <!--<property name="suffix" value=".jsp"></property>-->
-    <!--</bean>-->
-    <!--jade templateLoader 模板加载属性配置，默认后缀是jade，编码是UTF-8，这里可以不需要在配置了-->
-    <!--<bean id="templateLoader" class="de.neuland.jade4j.spring.template.SpringTemplateLoader">-->
-        <!--<property name="basePath" value="/WEB-INF/view/"/>-->
-    <!--</bean>-->
-    <!--&lt;!&ndash;jade configuaration 配置中心，可以配置缓存内容，美化输出格式等&ndash;&gt;-->
-    <!--<bean id="jadeConfiguration" class="de.neuland.jade4j.JadeConfiguration">-->
-        <!--<property name="prettyPrint" value="false"/>-->
-        <!--<property name="caching" value="false"/>-->
-        <!--<property name="templateLoader" ref="templateLoader"/>-->
-    <!--</bean>-->
-    <!--&lt;!&ndash;jade viewResolver 视图解析&ndash;&gt;-->
-    <!--<bean id="viewResolver" class="de.neuland.jade4j.spring.view.JadeViewResolver">-->
-        <!--<property name="configuration" ref="jadeConfiguration"/>-->
-        <!--<property name="renderExceptions" value="true"/>-->
-    <!--</bean>-->
-
-    <bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init"></bean>
+    <bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init">
+        <property name="root" value="/WEB-INF/html/" />
+    </bean>
     <bean class="org.beetl.ext.spring.BeetlSpringViewResolver" >
-        <property name="prefix" value="/WEB-INF/html/" />
+        <!--<property name="prefix" value="/WEB-INF/html/" />-->
         <!--<property name="suffix" value=".html" />-->
         <!--<property name="root" value="/" />-->
         <property name="contentType" value="text/html;charset=UTF-8"/>
