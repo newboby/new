@@ -23,18 +23,27 @@
         <!--<property name="suffix" value=".jsp"></property>-->
     <!--</bean>-->
     <!--jade templateLoader 模板加载属性配置，默认后缀是jade，编码是UTF-8，这里可以不需要在配置了-->
-    <bean id="templateLoader" class="de.neuland.jade4j.spring.template.SpringTemplateLoader">
-        <property name="basePath" value="/WEB-INF/view/"/>
+    <!--<bean id="templateLoader" class="de.neuland.jade4j.spring.template.SpringTemplateLoader">-->
+        <!--<property name="basePath" value="/WEB-INF/view/"/>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;jade configuaration 配置中心，可以配置缓存内容，美化输出格式等&ndash;&gt;-->
+    <!--<bean id="jadeConfiguration" class="de.neuland.jade4j.JadeConfiguration">-->
+        <!--<property name="prettyPrint" value="false"/>-->
+        <!--<property name="caching" value="false"/>-->
+        <!--<property name="templateLoader" ref="templateLoader"/>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;jade viewResolver 视图解析&ndash;&gt;-->
+    <!--<bean id="viewResolver" class="de.neuland.jade4j.spring.view.JadeViewResolver">-->
+        <!--<property name="configuration" ref="jadeConfiguration"/>-->
+        <!--<property name="renderExceptions" value="true"/>-->
+    <!--</bean>-->
+
+    <bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init"></bean>
+    <bean class="org.beetl.ext.spring.BeetlSpringViewResolver" >
+        <property name="prefix" value="/WEB-INF/html/" />
+        <!--<property name="suffix" value=".html" />-->
+        <!--<property name="root" value="/" />-->
+        <property name="contentType" value="text/html;charset=UTF-8"/>
     </bean>
-    <!--jade configuaration 配置中心，可以配置缓存内容，美化输出格式等-->
-    <bean id="jadeConfiguration" class="de.neuland.jade4j.JadeConfiguration">
-        <property name="prettyPrint" value="false"/>
-        <property name="caching" value="false"/>
-        <property name="templateLoader" ref="templateLoader"/>
-    </bean>
-    <!--jade viewResolver 视图解析-->
-    <bean id="viewResolver" class="de.neuland.jade4j.spring.view.JadeViewResolver">
-        <property name="configuration" ref="jadeConfiguration"/>
-        <property name="renderExceptions" value="true"/>
-    </bean>
+
 </beans>

@@ -57,6 +57,7 @@ public class GirlControllerTest {
 //                .andReturn().getResponse().getContentAsString();   //将相应的数据转换为字符串
         ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.get("/user/1")
 //                .contentType(MediaType.APPLICATION_JSON)  //数据的格式
+//                    .content()
                 .param("id","1")
         );
         MvcResult mvcResult = resultActions.andReturn();
