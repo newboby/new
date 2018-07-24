@@ -24,7 +24,7 @@
         <property name="maxUploadSize" value="10240000"></property>
     </bean>
     <bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init">
-        <property name="root" value="/WEB-INF/html/" />
+        <property name="root" value="/html/" />
     </bean>
     <bean class="org.beetl.ext.spring.BeetlSpringViewResolver" >
         <!--<property name="prefix" value="/WEB-INF/html/" />-->

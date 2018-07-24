@@ -188,7 +188,20 @@
             <artifactId>spring-test</artifactId>
             <version>4.3.5.RELEASE</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <!-- excel api -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.6</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+        <!-- xml api -->
+        <dependency>
+            <groupId>jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.0</version>
+        </dependency>
 
     </dependencies>
 

@@ -9,4 +9,5 @@
 data*
 *.log*
 target
+.xls
 

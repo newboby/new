@@ -1,3 +1,5 @@
+<%include("head.btl",{session:user!"空 "}){}%>
+
 <ol>
 <%
 for(girl in girls!){
@@ -5,5 +7,5 @@ for(girl in girls!){
 <li>${girl.age},${girl.id},------${girl.cupSize!"无结果"}-----${girl.money}<br><li>
 <%}
 %>
-
+<%include("index.html",{session:"尾部"}){}%>
 </ol>

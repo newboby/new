@@ -13,4 +13,6 @@ public interface GirlService {
     Girl selectAllGirl(Integer id);
 
     List<Girl> selectAll();
+
+    int add(Girl girl);
 }

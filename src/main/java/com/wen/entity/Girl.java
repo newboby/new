@@ -9,6 +9,22 @@ public class Girl {
 
     private Double money;
 
+    public Girl(Integer id, Integer age, String cupSize, Double money) {
+        this.id = id;
+        this.age = age;
+        this.cupSize = cupSize;
+        this.money = money;
+    }
+
+    public Girl() {
+    }
+
+    public Girl(Integer age, String cupSize, Double money) {
+        this.age = age;
+        this.cupSize = cupSize;
+        this.money = money;
+    }
+
     public Integer getId() {
         return id;
     }

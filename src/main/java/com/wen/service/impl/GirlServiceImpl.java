@@ -27,4 +27,10 @@ public class GirlServiceImpl implements GirlService {
         return girlMapper.selectAll();
     }
 
+    @Override
+    public int add(Girl girl) {
+        return girlMapper.insert(girl);
+    }
+
+
 }
